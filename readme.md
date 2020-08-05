@@ -1,13 +1,13 @@
 ## List themes:
 
 ```
-$ theme get --list -p=[PASSWORD] -s=elas-produzidas.myshopify.com
+$ theme get --list -p=[PASSWORD] -s=[STORE_URL]
 ```
 
 ## Get a theme:
 
 ```
-$ theme get --password=[PASSWORD] --store=elas-produzidas.myshopify.com --themeid=[THEME_ID]
+$ theme get --password=[PASSWORD] --store=[STORE_URL] --themeid=[THEME_ID]
 ```
 
 ## Watch:
