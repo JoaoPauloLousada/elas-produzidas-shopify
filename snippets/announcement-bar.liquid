@@ -1,0 +1,62 @@
+{% comment %}
+    Renders the announcement bar
+    Accepts:
+    - setrtings: {Object} settings Liquid object (required)
+    - page_type: {String} request.page_type (required)
+
+    Usage:
+    {% include 'announcement-bar', settings: section.settings, page_types: request.page_type %}
+{% endcomment %}
+
+{% if settings.message %}
+  <style>
+    {% if settings.logo != blank %}
+      .site-header__logo-image {
+        max-width: {{ settings.logo_max_width | escape }}px;
+      }
+    {% endif %}
+
+    {% if settings.align_logo == 'left' %}
+      .site-header__logo-image {
+        margin: 0;
+      }
+    {% endif %}
+  </style>
+{% endif %}
+
+{% if settings.message %}
+  {% if settings.home_page_only == false or page_type == 'index' %}
+    <style>
+      .announcement-bar {
+        background-color: {{ settings.color_bg }};
+      }
+
+      .announcement-bar__link:hover {
+        {% assign brightness = settings.color_bg | color_brightness %}
+
+        {% if brightness <= 192 %}
+          {% assign lightenAmount = 255 | minus: brightness | divided_by: 255 | times: 16 %}
+          background-color: {{ settings.color_bg | color_lighten: lightenAmount }};
+        {% else %}
+          {% assign darkenAmount = 255 | divided_by: brightness | times: 8 %}
+          background-color: {{ settings.color_bg | color_darken: darkenAmount }};
+        {% endif %}
+      }
+
+      .announcement-bar__message {
+        color: {{ settings.color_text }};
+      }
+    </style>
+
+    <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
+      {%- unless settings.message_link == blank -%}
+        <a href="{{ settings.message_link }}" class="announcement-bar__link">
+      {%- endunless -%}
+          <p class="announcement-bar__message">{{ settings.message_text | escape }}</p>
+      {%- unless settings.message_link == blank -%}
+        </a>
+      {%- endunless -%}
+    </div>
+
+  {% endif %}
+{% endif %}
