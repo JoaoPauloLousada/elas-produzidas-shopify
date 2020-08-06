@@ -1,0 +1,4 @@
+// @param {Integer} $int - number to multiply by spacer
+@function setHeight($int) {
+  @return $spacer / 2 * $int;
+}

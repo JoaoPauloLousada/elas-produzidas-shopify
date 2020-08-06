@@ -41,6 +41,10 @@
 
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 
+  {{ 'app.css' | asset_url | stylesheet_tag }}
+  
+  {{ 'app.js' | asset_url | script_tag }}
+
   <script>
     var theme = {
       breakpoints: {

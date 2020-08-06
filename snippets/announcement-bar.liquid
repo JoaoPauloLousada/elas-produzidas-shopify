@@ -48,11 +48,11 @@
       }
     </style>
 
-    <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
+    <div class="announcement-bar d-flex align-items-center justify-content-center p-0" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
       {%- unless settings.message_link == blank -%}
         <a href="{{ settings.message_link }}" class="announcement-bar__link">
       {%- endunless -%}
-          <p class="announcement-bar__message">{{ settings.message_text | escape }}</p>
+          <p class="text-white font-weight-bold">{{ settings.message_text | escape }}</p>
       {%- unless settings.message_link == blank -%}
         </a>
       {%- endunless -%}
