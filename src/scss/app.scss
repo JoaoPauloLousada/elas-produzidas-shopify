@@ -1,13 +1,23 @@
-// Required
+// Required from Bootstrap
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
+// Bootstrap Variables Overrides
 @import "./variables_override";
 
-// Optional
+// Optional from Bootstrap
 @import "~bootstrap/scss/grid";
 @import "~bootstrap/scss/utilities";
 
+// Material Icons
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp");
+
+// Styles
 @import "./functions";
+@import "./utilities";
+@import "./btn";
 @import "./announcement-bar";
+@import "./header";
+@import "./forms";

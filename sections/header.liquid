@@ -14,16 +14,23 @@
         <div class="brand flex-grow-1 text-center mt-2">
           brand
         </div>
-        <section class="d-flex w-25 mt-2">
-          <div class="search">
-            search
+        <section class="d-flex justify-content-end w-25 mt-2">
+          <div class="search mr-4">
+            <button class="btn--search" id="header-search-btn"><i class="material-icons-outlined">search</i></button>
+            <div class="search_input search_input--close" id="header-search">
+              <input type="text" placeholder="busca" />
+            </div>
           </div>
           <div class="top-area_actions">
-            actions
+            <ul class="d-flex pr-4">
+              <li class="mr-2"><a class="d-flex pointer" href="#"><i class="material-icons-outlined">person</i></a></li>
+              <li class="mr-2"><a class="d-flex pointer" href="#"><i class="material-icons">favorite_border</i></a> </li>
+              <li class=""><a class="d-flex pointer" href="#"><i class="material-icons-outlined">shopping_cart</i></a></li>
+            </ul>
           </div>
         </section>
       </section>
-      <section class="d-flex justify-content-center mt-3 mb-2">
+      <section class="d-flex justify-content-center pt-3 pb-2">
         <nav class="navbar-top">navbar</nav>
       </section>
     </section>

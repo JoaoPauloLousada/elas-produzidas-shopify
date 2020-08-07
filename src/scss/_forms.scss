@@ -1,0 +1,8 @@
+input {
+  &:focus,
+  &:active {
+    outline: none;
+  }
+  color: $gray-800;
+  font-size: 1rem;
+}

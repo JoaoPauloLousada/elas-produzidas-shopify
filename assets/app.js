@@ -86,14 +86,120 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/Maybe.js":
+/*!*************************!*\
+  !*** ./src/js/Maybe.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function Maybe(value) {
+  var _this = this;
+
+  this.__value = value;
+
+  this.flatMap = function (fn) {
+    if (_this.isNothing()) return Maybe.Nothing();
+    var m = fn(_this.__value);
+    return m.isNothing() ? Maybe.Nothing() : Maybe.of(m.__value);
+  };
+
+  this.getOrElse = function (elseVal) {
+    return _this.isNothing() ? elseVal : _this.__value;
+  };
+
+  this.getOrEmptyArray = function () {
+    return _this.getOrElse([]);
+  };
+
+  this.getOrNull = function () {
+    return _this.getOrElse(null);
+  };
+
+  this.isNothing = function () {
+    return _this.__value === null || _this.__value === undefined;
+  };
+
+  this.map = function (fn) {
+    return _this.isNothing() ? Maybe.of(null) : Maybe.of(fn(_this.__value));
+  };
+}
+
+Maybe.of = function (valueToBox) {
+  return new Maybe(valueToBox);
+};
+
+Maybe.Nothing = function () {
+  return Maybe.of(null);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Maybe);
+
+/***/ }),
+
 /***/ "./src/js/app.js":
 /*!***********************!*\
   !*** ./src/js/app.js ***!
   \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
 
 
+/***/ }),
+
+/***/ "./src/js/header.js":
+/*!**************************!*\
+  !*** ./src/js/header.js ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Maybe__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Maybe */ "./src/js/Maybe.js");
+
+
+var getElementById = function getElementById(id) {
+  return document.querySelector("#".concat(id));
+};
+
+var addBtnClick = function addBtnClick(btn_id, target_id, callback) {
+  _Maybe__WEBPACK_IMPORTED_MODULE_0__["default"].of(getElementById(btn_id)).map(function (btn) {
+    return btn.addEventListener("click", function () {
+      return callback(getElementById(target_id));
+    });
+  });
+};
+
+var isOpen = function isOpen(element) {
+  return !element.classList.contains("search_input--close");
+};
+
+var addOrRemoveClass = function addOrRemoveClass(element, targetClass, add) {
+  add ? element.classList.add(targetClass) : element.classList.remove(targetClass);
+};
+
+var toggleInput = function toggleInput(element, targetClass) {
+  _Maybe__WEBPACK_IMPORTED_MODULE_0__["default"].of(element).flatMap(function (el) {
+    return _Maybe__WEBPACK_IMPORTED_MODULE_0__["default"].of(isOpen(el));
+  }).map(function (isOpen) {
+    return addOrRemoveClass(element, targetClass, isOpen);
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = ((function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    addBtnClick("header-search-btn", "header-search", function (element) {
+      return toggleInput(element, "search_input--close");
+    });
+  });
+})());
 
 /***/ }),
 
