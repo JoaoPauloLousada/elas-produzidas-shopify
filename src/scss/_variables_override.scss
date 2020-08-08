@@ -1,3 +1,4 @@
+// Spacing
 $defaultSpacer: $spacer / 2;
 $spacers: (
   0: 0,
@@ -23,4 +24,19 @@ $spacers: (
   20: $defaultSpacer * 20,
 );
 
+// animation
 $default-transition: 0.6s;
+
+// font
+$font-weight-demi: 600;
+
+$h1-font-size: $font-size-base * 2.125;
+$h1-font-size-desktop: $font-size-base * 3;
+$h2-font-size: $font-size-base * 1.5;
+$h2-font-size-desktop: $font-size-base * 2.125;
+$h3-font-size: $font-size-base * 1.25;
+$h3-font-size-desktop: $font-size-base * 1.5;
+
+// $h4-font-size:                $font-size-base * 1.5 !default;
+// $h5-font-size:                $font-size-base * 1.25 !default;
+// $h6-font-size:                $font-size-base !default;

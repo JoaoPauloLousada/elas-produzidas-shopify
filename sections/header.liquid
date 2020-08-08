@@ -8,9 +8,7 @@
     %}
     <section class="top-area">
       <section class="d-flex justify-content-between">
-        <div class="social w-25 mt-2">
-          social
-        </div>
+        {% render 'social-sharing', wrapper_class: 'w-25 mt-2 pl-4' %}
         <div class="brand flex-grow-1 text-center mt-2">
           brand
         </div>
@@ -31,7 +29,9 @@
         </section>
       </section>
       <section class="d-flex justify-content-center pt-3 pb-2">
-        <nav class="navbar-top">navbar</nav>
+        <nav class="navbar-top">
+          {% render 'site-nav', linklist: section.settings.main_linklist, wrapper_class: "navbar-top_menu" %}
+        </nav>
       </section>
     </section>
   </header>

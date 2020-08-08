@@ -10473,6 +10473,58 @@ a.text-dark:focus {
   cursor: pointer;
 }
 
+.font-weight-demi {
+  font-weight: 600 !important;
+}
+
+h1,
+.h1 {
+  font-size: 2.125rem;
+}
+
+@media (min-width: 768px) {
+  h1,
+  .h1 {
+    font-size: 3rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h2,
+  .h2 {
+    font-size: 2.125rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  h3,
+  .h3 {
+    font-size: 1.5rem;
+  }
+}
+
+.text-body-1 {
+  font-size: 1rem;
+}
+
+.text-body-2 {
+  font-size: 0.875rem;
+}
+
+.text-caption {
+  font-size: 0.75rem;
+}
+
 .btn:focus,
 .btn:active {
   outline: none;
@@ -10491,6 +10543,10 @@ a.text-dark:focus {
 
 .announcement-bar {
   height: 2rem;
+}
+
+header .social {
+  display: flex;
 }
 
 header .search {
@@ -10514,6 +10570,18 @@ header .search_input {
 header .search_input--close {
   max-width: 0;
   overflow: hidden;
+}
+
+header .navbar-top_menu {
+  display: flex;
+}
+
+header .navbar-top_menu > li {
+  margin-right: 1.5rem;
+}
+
+header .navbar-top_menu > li:last-child {
+  margin-right: unset;
 }
 
 input {

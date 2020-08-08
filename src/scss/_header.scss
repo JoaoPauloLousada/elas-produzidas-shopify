@@ -1,4 +1,7 @@
 header {
+  .social {
+    display: flex;
+  }
   .search {
     display: flex;
     flex-direction: row-reverse;
@@ -16,6 +19,17 @@ header {
       &--close {
         max-width: 0;
         overflow: hidden;
+      }
+    }
+  }
+  .navbar-top {
+    &_menu {
+      display: flex;
+      > li {
+        margin-right: setSpace(3);
+        &:last-child {
+          margin-right: unset;
+        }
       }
     }
   }

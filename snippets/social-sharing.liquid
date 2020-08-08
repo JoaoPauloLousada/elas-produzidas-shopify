@@ -1,34 +1,32 @@
-<!-- /snippets/social-sharing.liquid -->
-<ul class="social-sharing">
-
-  {% if settings.share_facebook %}
-    <li>
-      <a target="_blank" href="//www.facebook.com/sharer.php?u={{ shop.url | append: share_permalink }}" class="btn btn--small btn--share share-facebook">
-        {% include 'icon-facebook' %}
-        <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_facebook' | t }}</span>
-        <span class="visually-hidden">{{ 'general.social.alt_text.share_on_facebook' | t }}</span>
-      </a>
-    </li>
+{% comment %}
+  Accepts:
+  - wrapper_class: {String} CSS wrapper class for the navigation (optional)
+  Usage:
+  {% include 'social-sharing', wrapper_class: 'site-nav--centered' %}
+{% endcomment %}
+<ul class="social {{wrapper_class}}">
+  {% if settings.social_facebook_link %}
+    <li class="mr-1"><a href="{{settings.social_facebook_link}}" target="_blank">{% render 'icon-facebook' %}</a></li>
   {% endif %}
-
-  {% if settings.share_twitter %}
-    <li>
-      <a target="_blank" href="//twitter.com/share?text={{ share_title | url_param_escape }}&amp;url={{ shop.url | append: share_permalink }}" class="btn btn--small btn--share share-twitter">
-        {% include 'icon-twitter' %}
-        <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_twitter' | t }}</span>
-        <span class="visually-hidden">{{ 'general.social.alt_text.share_on_twitter' | t }}</span>
-      </a>
-    </li>
+  {% if settings.social_instagram_link %}
+    <li class="mr-1"><a href="{{settings.social_instagram_link}}" target="_blank">{% render 'icon-instagram' %}</a></li>
   {% endif %}
-
-  {% if settings.share_pinterest %}
-    <li>
-      <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ shop.url | append: share_permalink }}&amp;media={{ share_image | img_url: '1024x1024' }}&amp;description={{ share_title | url_param_escape }}" class="btn btn--small btn--share share-pinterest">
-        {% include 'icon-pinterest' %}
-        <span class="share-title" aria-hidden="true">{{ 'general.social.share_on_pinterest' | t }}</span>
-        <span class="visually-hidden">{{ 'general.social.alt_text.share_on_pinterest' | t }}</span>
-      </a>
-    </li>
+  {% if settings.social_twitter_link and settings.social_twitter_link != '' %}
+    <li class="mr-1"><a href="{{settings.social_twitter_link}}" target="_blank">{% render 'icon-twitter' %}</a></li>
   {% endif %}
-
+  {% if settings.social_pinterest_link and settings.social_pinterest_link != '' %}
+    <li class="mr-1"><a href="{{settings.social_pinterest_link}}" target="_blank">{% render 'icon-pinterest' %}</a></li>
+  {% endif %}
+  {% if settings.social_tumblr_link and settings.social_tumblr_link != '' %}
+    <li class="mr-1"><a href="{{settings.social_tumblr_link}}" target="_blank">{% render 'icon-tumblr' %}</a></li>
+  {% endif %}
+  {% if settings.social_snapchat_link and settings.social_snapchat_link != '' %}
+    <li class="mr-1"><a href="{{settings.social_snapchat_link}}" target="_blank">{% render 'icon-snapchat' %}</a></li>
+  {% endif %}
+  {% if settings.social_youtube_link and settings.social_youtube_link != '' %}
+    <li class="mr-1"><a href="{{settings.social_youtube_link}}" target="_blank">{% render 'icon-youtube' %}</a></li>
+  {% endif %}
+  {% if settings.social_vimeo_link and settings.social_vimeo_link != '' %}
+    <li class="mr-1"><a href="{{settings.social_vimeo_link}}" target="_blank">{% render 'icon-vimeo' %}</a></li>
+  {% endif %}
 </ul>

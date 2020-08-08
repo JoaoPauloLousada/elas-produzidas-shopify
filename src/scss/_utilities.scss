@@ -1,3 +1,38 @@
 .pointer {
   cursor: pointer;
 }
+
+// TEXT
+.font-weight-demi {
+  font-weight: $font-weight-demi !important;
+}
+h1,
+.h1 {
+  font-size: $h1-font-size;
+  @include media-breakpoint-up(md) {
+    font-size: $h1-font-size-desktop;
+  }
+}
+h2,
+.h2 {
+  font-size: $h2-font-size;
+  @include media-breakpoint-up(md) {
+    font-size: $h2-font-size-desktop;
+  }
+}
+h3,
+.h3 {
+  font-size: $h3-font-size;
+  @include media-breakpoint-up(md) {
+    font-size: $h3-font-size-desktop;
+  }
+}
+.text-body-1 {
+  font-size: 1rem;
+}
+.text-body-2 {
+  font-size: 0.875rem;
+}
+.text-caption {
+  font-size: 0.75rem;
+}
