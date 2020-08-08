@@ -7,9 +7,6 @@
     Usage:
     {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
 {% endcomment %}
-{% comment %} <script>
-  console.log('menu', {{linklists[linklist].links | json}})
-</script> {% endcomment %}
 <ul class="{{wrapper_class}}">
   {% for link in linklist.links %}
     <li class="font-weight-demi text-uppercase text-body-1">
