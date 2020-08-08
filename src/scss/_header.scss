@@ -25,12 +25,22 @@ header {
   .navbar-top {
     &_menu {
       display: flex;
+      position: relative;
       > li {
         margin-right: setSpace(3);
         &:last-child {
           margin-right: unset;
         }
+        &:hover {
+          > .navbar-top__submenu {
+            display: block;
+          }
+        }
       }
+    }
+    &__submenu {
+      display: none;
+      position: absolute;
     }
   }
 }

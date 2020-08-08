@@ -7,8 +7,19 @@
     Usage:
     {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
 {% endcomment %}
+{% comment %} <script>
+  console.log('menu', {{linklists[linklist].links | json}})
+</script> {% endcomment %}
 <ul class="{{wrapper_class}}">
-  {% for link in linklists[linklist].links %}
-    <li class="font-weight-demi text-uppercase text-body-1"><a href="{{link.url}}">{{link.title}}</a></li>
+  {% for link in linklist.links %}
+    <li class="font-weight-demi text-uppercase text-body-1">
+      <a href="{{link.url}}">{{link.title}}</a>
+      {% if link.levels > 0 %}
+        <div class="navbar-top__submenu">
+          {% comment %} {{link.links}} {% endcomment %}
+          {% render 'site-nav', linklist: link, wrapper_class: '' %}
+        </div>
+      {% endif %}
+    </li>
   {% endfor %}
 </ul>

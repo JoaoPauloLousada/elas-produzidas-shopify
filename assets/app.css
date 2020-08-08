@@ -10574,6 +10574,7 @@ header .search_input--close {
 
 header .navbar-top_menu {
   display: flex;
+  position: relative;
 }
 
 header .navbar-top_menu > li {
@@ -10582,6 +10583,15 @@ header .navbar-top_menu > li {
 
 header .navbar-top_menu > li:last-child {
   margin-right: unset;
+}
+
+header .navbar-top_menu > li:hover > .navbar-top__submenu {
+  display: block;
+}
+
+header .navbar-top__submenu {
+  display: none;
+  position: absolute;
 }
 
 input {
