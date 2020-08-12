@@ -10525,6 +10525,12 @@ h3,
   font-size: 0.75rem;
 }
 
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 .btn:focus,
 .btn:active {
   outline: none;
@@ -10629,5 +10635,14 @@ input {
 input:focus,
 input:active {
   outline: none;
+}
+
+.banner-link {
+  color: unset;
+  background-color: unset;
+}
+
+.banner-link:hover {
+  color: unset;
 }
 

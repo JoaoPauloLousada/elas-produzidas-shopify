@@ -12,9 +12,6 @@
   {%- endstyle -%}
 {%- endif -%}
 <div data-section-id="{{ section.id }}" data-section-type="hero-section">
-  {% if section.settings.banner_link %}
-    <a href="{{section.settings.banner_link}}" target="_blank" class="banner-link">
-  {% endif %}
   {%- if section.settings.hero_layout == 'fixed_width' -%}
     <div class="page-width">
   {%- endif -%}
@@ -123,9 +120,6 @@
   {%- if section.settings.hero_layout == 'fixed_width' -%}
     </div>
   {%- endif -%}
-  {% if section.settings.banner_link %}
-    </a>
-  {% endif %}
 </div>
 
 {% schema %}
@@ -718,11 +712,6 @@
         "zh-CN": "按钮链接",
         "zh-TW": "按鈕連結"
       }
-    },
-    {
-      "id": "banner_link",
-      "type": "url",
-      "label": "Banner link"
     }
   ],
   "presets": [
