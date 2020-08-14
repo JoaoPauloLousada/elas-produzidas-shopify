@@ -24,6 +24,14 @@ $spacers: (
   20: $defaultSpacer * 20,
 );
 
+// container
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1440px,
+);
+
 // animation
 $default-transition: 0.45s;
 

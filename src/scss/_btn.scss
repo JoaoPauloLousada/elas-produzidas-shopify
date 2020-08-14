@@ -13,4 +13,10 @@
     align-items: center;
     justify-content: center;
   }
+  &-outlined {
+    min-width: 160px;
+    background-color: transparent;
+    border: 1px solid $gray-600;
+    color: $gray-900;
+  }
 }

@@ -1,0 +1,30 @@
+.featured-items {
+  $featured-item-default-spacing: 5;
+  &__title {
+    text-align: center;
+    padding-bottom: setSpace($featured-item-default-spacing + 7);
+  }
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: center;
+    &--3 {
+      .featured-items__item {
+        width: 31%;
+        margin: 0 1.75% setSpace($featured-item-default-spacing + 3);
+        &:first-child,
+        &:nth-child(4n) {
+          margin-left: 0;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        &:nth-child(3n-1) {
+          margin-top: setSpace(-$featured-item-default-spacing);
+        }
+      }
+    }
+  }
+  &__item {
+  }
+}
