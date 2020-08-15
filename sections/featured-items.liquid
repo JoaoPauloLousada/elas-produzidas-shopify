@@ -1,11 +1,11 @@
-<div class="featured-items container">
+<div class="featured-items container section-spacing px-0">
   {% if section.settings.title %}
     <h2 class="featured-items__title">{{ section.settings.title }}</h2>
   {% endif %}
   <div class="featured-items-row featured-items-row--3">
     {% for block in section.blocks %}
       {% if block.type == 'item' %}
-          <div class="featured-items__item">
+          <div class="featured-items__item col-12 col-md-4">
             <div class="w-100">
               <a class="" href="#">
                 <img class="w-100" src="{{ block.settings.image | img_url: '720x' }}" alt="" />

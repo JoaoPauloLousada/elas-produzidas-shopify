@@ -36,3 +36,15 @@ h3,
 .text-caption {
   font-size: 0.75rem;
 }
+
+// SPACING
+.section-spacing {
+  padding: $section-top-bottom-spacing 0;
+  @include media-breakpoint-up(lg) {
+    padding: $section-top-bottom-spacing-desktop 0;
+  }
+}
+.index-section {
+  padding-top: 0;
+  padding-bottom: 0;
+}
