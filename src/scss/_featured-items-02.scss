@@ -1,0 +1,17 @@
+.featured-items-02 {
+  background-color: var(--color-bg-secondary);
+  padding: $section-top-bottom-spacing 0;
+  color: var(--text-color-bg-secondary);
+
+  @include media-breakpoint-up(lg) {
+    padding: $section-top-bottom-spacing-desktop 0;
+  }
+  &__title {
+    text-transform: unset;
+    color: var(--text-color-bg-secondary);
+  }
+  p {
+    color: inherit;
+    font-size: 1.1rem;
+  }
+}

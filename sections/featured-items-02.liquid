@@ -1,0 +1,107 @@
+<div class="featured-items-02">
+  <div class="featured-items-02-inner container">
+    {% if section.settings.title %}
+      <h2 class="featured-items-02__title text-center pb-4">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="row">
+      {% for block in section.blocks %}
+        {% if block.type == 'item' %}
+            <div class="col-12 col-md-6 col-lg-3 mb-8 mb-lg-0">
+              <a class="d-block w-100" href="{{block.settings.url}}">
+                <img class="w-100" src="{{block.settings.image | img_url: '400x'}}" alt="">
+              </a>
+              <h3 class="text-center font-weight-lighter pt-2">{{block.settings.title}}</h3>
+              <p class="text-center">{{block.settings.description}}</p>
+            </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": {
+      "en": "Featured Items - 02",
+      "pt-BR": "Items em destaque 02"
+    },
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": {
+          "en": "Title",
+          "pt-BR": "Título"  
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "type": "item",
+        "name": {
+          "en": "Featured item",
+          "pt-BR": "Item em destaque"      
+        },
+        "settings": [
+          {
+            "id": "url",
+            "type": "url",
+            "label": "Url"
+          },
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": {
+              "en": "Image",
+              "pt-BR": "Imagem"      
+            }
+          },
+          {
+            "id": "title",
+            "type": "text",
+            "label": {
+              "en": "Title",
+              "pt-BR": "Título"      
+            }
+          },
+          {
+            "id": "description",
+            "type": "text",
+            "label": {
+              "en": "description",
+              "pt-BR": "Descrição"      
+            }
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": {
+        "en": "Featured Items - 02",
+        "pt-BR": "Items em destaque 02"
+        },
+        "category": {
+          "da": "Kollektion",
+          "de": "Kategorie",
+          "en": "Collection",
+          "es": "Colección",
+          "fi": "Kokoelma",
+          "fr": "Collection",
+          "hi": "कलेक्शन",
+          "it": "Collezione",
+          "ja": "コレクション",
+          "ko": "컬렉션",
+          "nb": "Samling",
+          "nl": "Collectie",
+          "pt-BR": "Coleção",
+          "pt-PT": "Coleção",
+          "sv": "Produktserie",
+          "th": "คอลเลกชัน",
+          "zh-CN": "收藏",
+          "zh-TW": "商品系列"
+        }
+      }
+    ]
+  }
+{% endschema %}

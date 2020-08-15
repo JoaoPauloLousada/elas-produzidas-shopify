@@ -45,6 +45,6 @@ $h2-font-size-desktop: $font-size-base * 2.125;
 $h3-font-size: $font-size-base * 1.25;
 $h3-font-size-desktop: $font-size-base * 1.5;
 
-// $h4-font-size:                $font-size-base * 1.5 !default;
-// $h5-font-size:                $font-size-base * 1.25 !default;
-// $h6-font-size:                $font-size-base !default;
+// Default spacings
+$section-top-bottom-spacing: $defaultSpacer * 8;
+$section-top-bottom-spacing-desktop: $defaultSpacer * 13;

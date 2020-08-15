@@ -7,7 +7,6 @@
   &-row {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: center;
     &--3 {
       .featured-items__item {
         width: 31%;
@@ -24,7 +23,5 @@
         }
       }
     }
-  }
-  &__item {
   }
 }

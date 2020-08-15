@@ -10681,3 +10681,25 @@ input:active {
   margin-top: -2.5rem;
 }
 
+.featured-items-02 {
+  background-color: var(--color-bg-secondary);
+  padding: 4rem 0;
+  color: var(--text-color-bg-secondary);
+}
+
+@media (min-width: 992px) {
+  .featured-items-02 {
+    padding: 6.5rem 0;
+  }
+}
+
+.featured-items-02__title {
+  text-transform: unset;
+  color: var(--text-color-bg-secondary);
+}
+
+.featured-items-02 p {
+  color: inherit;
+  font-size: 1.1rem;
+}
+
