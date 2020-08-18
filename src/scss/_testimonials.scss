@@ -1,0 +1,33 @@
+.testimonials-wrapper {
+  @extend .section-spacing;
+}
+.testimonials {
+  &__text {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+    overflow: hidden;
+    > a {
+      opacity: 0.5;
+      transition: $default-transition;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    &.active {
+      > a {
+        opacity: 1;
+      }
+    }
+    @include media-breakpoint-up(md) {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}

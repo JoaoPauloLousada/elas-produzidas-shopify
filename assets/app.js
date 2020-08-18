@@ -149,6 +149,8 @@ Maybe.Nothing = function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ "./src/js/header.js");
+/* harmony import */ var _testimonials__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./testimonials */ "./src/js/testimonials.js");
+
 
 
 /***/ }),
@@ -197,6 +199,25 @@ var toggleInput = function toggleInput(element, targetClass) {
   document.addEventListener("DOMContentLoaded", function () {
     addBtnClick("header-search-btn", "header-search", function (element) {
       return toggleInput(element, "search_input--close");
+    });
+  });
+})());
+
+/***/ }),
+
+/***/ "./src/js/testimonials.js":
+/*!********************************!*\
+  !*** ./src/js/testimonials.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ((function () {
+  document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("Testimonials", function (e) {
+      console.log("Testimonials Event Triggered", e.detail);
     });
   });
 })());
